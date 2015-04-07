@@ -1,8 +1,6 @@
 Various researchers have worked on designing congestion control schemes for Multipath TCP. One of the key issues compared to regular congestion control schemes is that due to the utilisation of several not necessarily disjoint paths a Multipath TCP congestion control scheme must ensure that it does not harm regular (single path) TCP traffic.
 
-Wischik et al. describe in \cite{Wischik_Resource:2008} the resource pooling principle that has been the motivation for the design of implementable congestion control schemes for Multipath TCP. 
-
-Several congestion control schemes have been explored and proposed.
+Wischik et al. describe in \cite{Wischik_Resource:2008} the resource pooling principle that has been the motivation for the design of implementable congestion control schemes for Multipath TCP. Since then, several congestion control schemes have been explored and proposed.
 
 Wischik et al. describe in \cite{Wischik_Design:2011} the Linked Increase Algorithm that has also been selected by the IETF MPTCP working group \cite{rfc6356}. This congestion control scheme is a variant of the standard Reno congestion control algorithm used by single path TCP. This is the default congestion control scheme in the Multipath TCP implementation in the Linux kernel. Another variant of Reno has been proposed \cite{Vo_mReno:2014}.  % variation of TCP reno (unclear to me, evaluated with  ns-2), weak comparison, not detailed in text
 
@@ -13,6 +11,7 @@ Cao et al. propose in
 \cite{Cao_Delay:2012} % delay based congestion control, implemented in Linux
 a delay-based congestion control scheme for Multipath TCP. This congestion control scheme relies on delay measurements to estimate congestion and adapt the congestion windows of the different subflows. It has been included in the Linux Multipath TCP implementation.
 
-Khalili et al. described in \cite{Khalili_MPTCP:2012,Khalili_MPTCP:2013} several conditions where the LIA congestion control scheme does not operate perfectly and propose the OLIA congestion control scheme. This congestion control scheme is supported by the Linux Multipath TCP implementation.  % OLIA revised in \cite{}
+Khalili et al. describe in \cite{Khalili_MPTCP:2012,Khalili_MPTCP:2013} several conditions where the LIA congestion control scheme does not operate perfectly and propose the OLIA congestion control scheme. This congestion control scheme is supported by the Linux Multipath TCP implementation.  % OLIA revised in \cite{}
 
+Peng et al. describe in \cite{Peng_BALIA:2015} another improvement to the LIA congestion control scheme. This congestion control scheme is also supported by the Linux Multipath TCP implementation.
 

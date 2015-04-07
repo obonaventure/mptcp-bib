@@ -1,0 +1,64 @@
+This section describes several of the use cases where Multipath TCP has already been evaluated or used.
+
+\subsection{Datacenters}
+
+Although Multipath TCP was initially designed with smartphones and mobile devices in mind it found a very interesting use case in datacenters. Today's datacenters are include multiple paths between any pair of communicating hosts. This redundancy is included for two main reasons. First, it enables load balancing and datacenters often rely on Equal Cost Multipath. Second, having redundancy is important to deal with switches and link failures that are frequent events \cite{Zhou_WCMP:2014}.
+
+Raiciu et al. demonstrate in \cite{Raiciu_Datacenter:2011} that Multipath TCP can enable higher utilisation in datacenters. This work considers several datacenter topologies and uses both simulations and real measurements with the Multipath TCP implementation in the Linux kernel running on Amazon EC2 virtual machines to demonstrate the benefits of Multipath TCP. It is interesting to note that for this use case the communicating hosts have a single address in contrast with the requirements listed in \cite{rfc6182}. The different paths are created by creating several subflows between the client and the server using different source ports on the client host. The hash function used to perform ECMP on the network nodes forwards the different subflows over different paths and the Multipath TCP congestion control scheme adjusts the repartition of the load among these paths in reaction to congestion events. 
+
+Although~\cite{Raiciu_Datacenter:2011} assumed ECMP, this is not strictly required and variations of this scheme are possible. Detal et al. propose in \cite{Detal_Revisiting:2013} to replace hash function in load balancing nodes by block ciphers and demonstrates that this technique enables Multipath TCP-enabled hosts to select paths inside the datacenter. Zhou et al. propose in \cite{Zhou_WCMP:2014} a load balancing scheme that distributes the load according to different weights. Their simulations show that WCMP complements nicely Multipath TCP. 
+
+
+Bredel et al. modify in \cite{Bredel_Flow-based:2014} an Openflow controller and use it with Multipath TCP. Their measurements show performance improvements over disjoint paths.
+
+Tariq and Bassiouni use simulations in \cite{Tariz_OBS:2014} to evaluate the benefits of combining Multipath TCP with optical burst switching in datacenters.
+
+\subsection{Mobile and wireless}
+
+The mobile and wireless networks were one of the initial motivations for Multipath TCP. Several researchers have studied Multipath TCP in such environments.
+
+Raiciu et al. \cite{Raiciu_Opportunistic:2011} % opportunistic mobility uses proxy
+
+Pluntke et al. \cite{Pluntke_Saving:2011} analyse whether Multipath TCP could reduce energy consumption by using several interfaces simultaneously. They also propose a scheduling algorithm that takes energy into account. Peng et al. go one step further in  % saving mobile energy
+\cite{Peng_Energy:2014} by proposing algorithm that try to optimise both throughput and energy consumption. % p.264: In this paper, we design MP-TCP algorithms by jointly considering both throughput and energy consumption for mobile devices. We consider two types of applications: realtime applications, such as video streaming, and file transfer applications, such as file download/upload. We develop energy efficient MP-TCP algorithms for both of them with theoretical performance guarantee. Our preliminary simulation results show that the algorithms can indeed shift traffic to energy efficient path.  -- Highlighted 07 apr 2015
+
+Paasch et al. \cite{Paasch_Exploring:2012} propose several modes for Multipath TCP on multihomed wireless devices and extends the Multipath TCP implementation in the Linux kernel to support these modes of operation. They also analyse the reaction of Multipath TCP to handover events. 
+
+Boccassi et al. propose  Binder in \cite{Boccassi_Binder:2013}. This system leverages Multipath TCP to aggregate multiple Internet gateways in community networks. The Binder path manager that is included in the Multipath TCP implementation in the Linux kernel is a result of this work. % binder path manager
+
+Zhou et al. explore in \cite{Zhou_cooperation:2015} the possibility of allowing users to cooperate. The considered scenario is an LTE network and smartphones that serve as relays to enable other users to reach the LTE network.
+
+Nong et al. explore in \cite{Nong_Aggregating:2014} how Multipath TCP performs in an 802.11s mesh network and propose to use this technique to aggregate multiple wireless gateways.
+
+\subsection{Middlebox}
+
+Various types of middleboxes, ranging from simple Network Address Translation or firewalls to Deep Packet Inspection, Normalizers or transparent proxies have been deployed by entreprise and network operators. Honda et al. performed in \cite{Honda_Extend:2011} a detailed study of the interference caused by such middleboxes. This study had a profound impact on the final design of Multipath TCP and the various mechanisms that it includes to detect and mitigate interference from such middleboxes.
+
+Detal et al. propose \href{http://tracebox.org}{tracebox} in \cite{Detal_tracebox:2013}. This middlebox detection tools leverages ICMP reports to detect middlebox interference. They use it to evaluate where TCP packets using the \texttt{MP\_CAPABLE} options are blocked.
+
+Hesmans at al. analyse in \cite{Hesmans_Extensions:2013} the various interactions between Multipath TCP and different types of middleboxes. Their measurements with the Multipath TCP implementation in the Linux kernel show that it can correctly cope with a wide range of middleboxes. Since then, other successful interactions with stranger middleboxes have been reported \cite{draft-ietf-mptcp-experience}.
+
+Nicutar et al. take a different approach in \cite{Nicutar_Acrobatics:2013} since they propose to leverage Multipath TCP to design new middleboxes that could cooperate with the endhosts.
+
+\subsection{Simulation studies}
+
+To be provided
+
+\subsection{Measurement studies}
+
+
+The first measurements with the Multipath TCP implementation in the Linux kernel were reported in \cite{Barre_Multipath:2011}.
+
+
+Arzani et al. analyse in \cite{Arzani_Impact:2014} the impact of scheduling policies and path management on the performance of Multipath TCP. 
+
+Yamauchi and Ito evaluate in \cite{Yamauchi_Web:2014} whether the users observe a benefit when Multipath TCP is used in lossy environments. The measurements with a limited set of users and web applications show some benefit with Multipath TCP in the chosen environment.
+
+Ferlin et al. analyse in \cite{Ferlin_Bufferbloat:2014}, the impact of bufferbloat in cellular networks on the performance of Multipath TCP and propose a sender-based solution to mitigate the problem. The proposed solution is tested in the Linux kernel implementation of Multipath TCP. Chen and Towsley have also modelled the impact of the bufferbloat on Multipath TCP in \cite{Chen_Bufferbloat:2014}
+
+\subsection{Testbeds}
+
+Nemeth et al. propose in \cite{Nemeth_Playground:2013} an overlay network on top of the Planetlab testbed to enable researchers to perform experiments with Multipath TCP in the wide area. 
+
+
+The Nornet testbed \cite{Gunnar_Nornet:2014,Kvalbein_Nornet:2014} is an international testbed that gathers multihomed hosts. It is composed of two parts. The Nornet core nodes \cite{Gunnar_Nornet:2014} are servers connected to several ISP networks. They form the backbone of the Nornet testbed. There are Nornet core nodes in several continents. The Nornet edge nodes \cite{Kvalbein_Nornet:2014} are embedded devices that are attached to different wireless (WiFi and cellular) networks. The Nornet edge nodes are currently located in Norway. Both types of nodes have been used to perform a wide range of measurements with Multipath TCP \cite{draft-dreibholz-mptcp-nornet-experience}.

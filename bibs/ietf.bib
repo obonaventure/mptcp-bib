@@ -1,0 +1,693 @@
+// All IETF drafts and RFCs on Multipath TCP
+
+// RFC
+
+@misc{rfc6181,
+   author = {M. Bagnulo},
+   title = {{Threat Analysis for TCP Extensions for Multipath Operation with Multiple Addresses}},
+   howpublished = {RFC 6181},
+   series={Request for Comments},
+   number={6181},
+   year = {2011},
+   month = {March},
+   publisher = {IETF},
+   organization = {Internet Engineering Task Force},
+   institution = {Internet Engineering Task Force},
+   url={http://www.rfc-editor.org/rfc/rfc6181.txt},
+}
+
+@misc{rfc6182,
+   author = {A. Ford and C. Raiciu and M. Handley and S. Barre and J. Iyengar},
+   title = {{Architectural Guidelines for Multipath TCP Development}},
+   howpublished = {RFC 6182},
+   series={Request for Comments},
+   number={6182},
+   year = {2011},
+   month = {March},
+   publisher = {IETF},
+   organization = {Internet Engineering Task Force},
+   institution = {Internet Engineering Task Force},
+   url={http://www.rfc-editor.org/rfc/rfc6182.txt},
+}
+
+@misc{rfc6356,
+   author = {C. Raiciu and M. Handley and D. Wischik},
+   title = {{Coupled Congestion Control for Multipath Transport Protocols}},
+   howpublished = {RFC 6356},
+   series={Request for Comments},
+   number={6356},
+   year = {2011},
+   month = {October},
+   publisher = {IETF},
+   organization = {Internet Engineering Task Force},
+   institution = {Internet Engineering Task Force},
+   url={http://www.rfc-editor.org/rfc/rfc6356.txt},
+}
+
+@misc{rfc6824,
+   author = {A. Ford and C. Raiciu and M. Handley and O. Bonaventure},
+   title = {{TCP Extensions for Multipath Operation with Multiple Addresses}},
+   howpublished = {RFC 6824},
+   series={Request for Comments},
+   number={6824},
+   year = {2013},
+   month = {January},
+   publisher = {IETF},
+   organization = {Internet Engineering Task Force},
+   institution = {Internet Engineering Task Force},
+   url={http://www.rfc-editor.org/rfc/rfc6824.txt},
+}
+
+@misc{rfc6897,
+   author = {M. Scharf and A. Ford},
+   title = {{Multipath TCP (MPTCP) Application Interface Considerations}},
+   howpublished = {RFC 6897},
+   series={Request for Comments},
+   number={6897},
+   year = {2013},
+   month = {March},
+   publisher = {IETF},
+   organization = {Internet Engineering Task Force},
+   institution = {Internet Engineering Task Force},
+   url={http://www.rfc-editor.org/rfc/rfc6897.txt},
+}
+// IETF drafts
+
+@TechReport{draft-bagnulo-mptcp-attacks,
+	Author="Marcelo Bagnulo and Christoph Paasch and Fernando Gont and Olivier Bonaventure and Costin Raiciu",
+	Title="{Analysis of MPTCP residual threats and possible fixes}",
+	Type="{Internet-Draft}",
+	Number="draft-bagnulo-mptcp-attacks-01",
+	Institution="{IETF Secretariat}",
+	day=1,
+	month=oct,
+	year=2013,
+	url="http://tools.ietf.org/html/draft-bagnulo-mptcp-attacks-01",
+	lastchecked={10-Jan-2015}
+}
+
+@TechReport{draft-bagnulo-mptcp-secure,
+	Author="Marcelo Bagnulo",
+	Title="{Secure MPTCP}",
+	Type="{Internet-Draft}",
+	Number="draft-bagnulo-mptcp-secure-00",
+	Institution="{IETF Secretariat}",
+	day=13,
+	month=feb,
+	year=2014,
+	url="http://tools.ietf.org/html/draft-bagnulo-mptcp-secure-00",
+	lastchecked={10-Jan-2015}
+}
+
+@TechReport{draft-bagnulo-mptcp-threat,
+	Author="Marcelo Bagnulo",
+	Title="{Threat Analysis for Multi-addressed/Multi-path TCP}",
+	Type="{Internet-Draft}",
+	Number="draft-bagnulo-mptcp-threat-01",
+	Institution="{IETF Secretariat}",
+	day=8,
+	month=feb,
+	year=2010,
+	url="http://tools.ietf.org/html/draft-bagnulo-mptcp-threat-01",
+	note={ Replaced by draft-ietf-mptcp-threat },
+	lastchecked={10-Jan-2015}
+}
+
+@TechReport{draft-barre-mptcp-impl,
+	Author="Sebastien Barre and Christoph Paasch",
+	Title="{MultiPath TCP - Guidelines for implementers}",
+	Type="{Internet-Draft}",
+	Number="draft-barre-mptcp-impl-00",
+	Institution="{IETF Secretariat}",
+	day=7,
+	month=mar,
+	year=2011,
+	url="http://tools.ietf.org/html/draft-barre-mptcp-impl-00",
+	lastchecked={10-Jan-2015}
+}
+
+@TechReport{draft-barre-mptcp-tfo,
+	Author="Sebastien Barre and Gregory Detal and Olivier Bonaventure",
+	Title="{TFO support for Multipath TCP}",
+	Type="{Internet-Draft}",
+	Number="draft-barre-mptcp-tfo-00",
+	Institution="{IETF Secretariat}",
+	day=3,
+	month=jul,
+	year=2014,
+	url="http://tools.ietf.org/html/draft-barre-mptcp-tfo-00",
+	lastchecked={10-Jan-2015}
+}
+
+@TechReport{draft-bonaventure-mptcp-experience,
+	Author="Olivier Bonaventure and Christoph Paasch",
+	Title="{Experience with Multipath TCP}",
+	Type="{Internet-Draft}",
+	Number="draft-bonaventure-mptcp-experience-00",
+	Institution="{IETF Secretariat}",
+	day=1,
+	month=jul,
+	year=2014,
+	url="http://tools.ietf.org/html/draft-bonaventure-mptcp-experience-00",
+	lastchecked={10-Jan-2015}
+}
+
+@TechReport{draft-bonaventure-mptcp-rst,
+	Author="Olivier Bonaventure and Christoph Paasch and Gregory Detal",
+	Title="{Processing of RST segments by Multipath TCP}",
+	Type="{Internet-Draft}",
+	Number="draft-bonaventure-mptcp-rst-00",
+	Institution="{IETF Secretariat}",
+	day=3,
+	month=jul,
+	year=2014,
+	url="http://tools.ietf.org/html/draft-bonaventure-mptcp-rst-00",
+	lastchecked={10-Jan-2015}
+}
+
+@TechReport{draft-bonaventure-mptcp-timestamp,
+	Author="Olivier Bonaventure",
+	Title="{Multipath TCP timestamp option}",
+	Type="{Internet-Draft}",
+	Number="draft-bonaventure-mptcp-timestamp-00",
+	Institution="{IETF Secretariat}",
+	day=26,
+	month=oct,
+	year=2014,
+	url="http://tools.ietf.org/html/draft-bonaventure-mptcp-timestamp-00",
+	note={ I-D Exists },
+	lastchecked={10-Jan-2015}
+}
+
+@TechReport{draft-bonaventure-mptcp-tls,
+	Author="Olivier Bonaventure",
+	Title="{MPTLS : Making TLS and Multipath TCP stronger together}",
+	Type="{Internet-Draft}",
+	Number="draft-bonaventure-mptcp-tls-00",
+	Institution="{IETF Secretariat}",
+	day=27,
+	month=oct,
+	year=2014,
+	url="http://tools.ietf.org/html/draft-bonaventure-mptcp-tls-00",
+	note={ I-D Exists },
+	lastchecked={10-Jan-2015}
+}
+
+@TechReport{draft-coene-mptcp-conformance,
+	Author="Yvan Coene",
+	Title="{Conformance tests for Multipath TCP}",
+	Type="{Internet-Draft}",
+	Number="draft-coene-mptcp-conformance-00",
+	Institution="{IETF Secretariat}",
+	day=15,
+	month=jul,
+	year=2013,
+	url="http://tools.ietf.org/html/draft-coene-mptcp-conformance-00",
+	lastchecked={10-Jan-2015}
+}
+
+@TechReport{draft-deng-mptcp-mobile-network-proxy,
+	Author="Deng Lingli and Dapeng Liu and Tao Sun",
+	Title="{MPTCP Proxy for Mobile Networks}",
+	Type="{Internet-Draft}",
+	Number="draft-deng-mptcp-mobile-network-proxy-00",
+	Institution="{IETF Secretariat}",
+	day=14,
+	month=feb,
+	year=2014,
+	url="http://tools.ietf.org/html/draft-deng-mptcp-mobile-network-proxy-00",
+	lastchecked={10-Jan-2015}
+}
+
+@TechReport{draft-deng-mptcp-nrsack,
+	Author="Zhenjie Deng",
+	Title="{Non-Renegable Selective Acknowledgements (NR-SACKs) for MPTCP}",
+	Type="{Internet-Draft}",
+	Number="draft-deng-mptcp-nrsack-00",
+	Institution="{IETF Secretariat}",
+	day=4,
+	month=dec,
+	year=2013,
+	url="http://tools.ietf.org/html/draft-deng-mptcp-nrsack-00",
+	lastchecked={10-Jan-2015}
+}
+
+@TechReport{draft-deng-mptcp-proxy,
+	Author="Deng Lingli and Dapeng Liu and Tao Sun and Mohamed Boucadair and Gregory Cauchie",
+	Title="{Use-cases and Requirements for MPTCP Proxy in ISP Networks}",
+	Type="{Internet-Draft}",
+	Number="draft-deng-mptcp-proxy-01",
+	Institution="{IETF Secretariat}",
+	day=26,
+	month=oct,
+	year=2014,
+	url="http://tools.ietf.org/html/draft-deng-mptcp-proxy-01",
+	note={ I-D Exists },
+	lastchecked={10-Jan-2015}
+}
+
+@TechReport{draft-eardley-mptcp-implementations-survey,
+	Author="Philip Eardley",
+	Title="{Survey of MPTCP Implementations}",
+	Type="{Internet-Draft}",
+	Number="draft-eardley-mptcp-implementations-survey-02",
+	Institution="{IETF Secretariat}",
+	day=12,
+	month=jul,
+	year=2013,
+	url="http://tools.ietf.org/html/draft-eardley-mptcp-implementations-survey-02",
+	lastchecked={10-Jan-2015}
+}
+
+@TechReport{draft-ford-mptcp-architecture,
+	Author="Alan Ford and Costin Raiciu and Sebastien Barre and Jana and Bryan Ford",
+	Title="{Architectural Guidelines for Multipath TCP Development}",
+	Type="{Internet-Draft}",
+	Number="draft-ford-mptcp-architecture-01",
+	Institution="{IETF Secretariat}",
+	day=3,
+	month=feb,
+	year=2010,
+	url="http://tools.ietf.org/html/draft-ford-mptcp-architecture-01",
+	note={ Replaced by draft-ietf-mptcp-architecture },
+	lastchecked={10-Jan-2015}
+}
+
+@TechReport{draft-ford-mptcp-multiaddressed,
+	Author="Alan Ford and Costin Raiciu and Mark Handley",
+	Title="{TCP Extensions for Multipath Operation with Multiple Addresses}",
+	Type="{Internet-Draft}",
+	Number="draft-ford-mptcp-multiaddressed-03",
+	Institution="{IETF Secretariat}",
+	day=9,
+	month=mar,
+	year=2010,
+	url="http://tools.ietf.org/html/draft-ford-mptcp-multiaddressed-03",
+	note={ Replaced by draft-ietf-mptcp-multiaddressed },
+	lastchecked={10-Jan-2015}
+}
+
+@TechReport{draft-hampel-mptcp-applicability-wireless-networks,
+	Author="Georg Hampel and Thierry Klein",
+	Title="{Enhancements to Improve the Applicability of Multipath TCP to Wireless Access Networks}",
+	Type="{Internet-Draft}",
+	Number="draft-hampel-mptcp-applicability-wireless-networks-00",
+	Institution="{IETF Secretariat}",
+	day=15,
+	month=jun,
+	year=2011,
+	url="http://tools.ietf.org/html/draft-hampel-mptcp-applicability-wireless-networks-00",
+	lastchecked={10-Jan-2015}
+}
+
+@TechReport{draft-hampel-mptcp-proxies-anchors,
+	Author="Georg Hampel and Thierry Klein",
+	Title="{MPTCP Proxies and Anchors}",
+	Type="{Internet-Draft}",
+	Number="draft-hampel-mptcp-proxies-anchors-00",
+	Institution="{IETF Secretariat}",
+	day=8,
+	month=feb,
+	year=2012,
+	url="http://tools.ietf.org/html/draft-hampel-mptcp-proxies-anchors-00",
+	lastchecked={10-Jan-2015}
+}
+
+@TechReport{draft-handley-mptcp-routing,
+	Author="Mark Handley and Costin Raiciu and Marcelo Bagnulo",
+	Title="{Outgoing Packet Routing with MP-TCP}",
+	Type="{Internet-Draft}",
+	Number="draft-handley-mptcp-routing-00",
+	Institution="{IETF Secretariat}",
+	day=19,
+	month=oct,
+	year=2009,
+	url="http://tools.ietf.org/html/draft-handley-mptcp-routing-00",
+	lastchecked={10-Jan-2015}
+}
+
+@TechReport{draft-ietf-mptcp-api,
+	Author="Michael Scharf and Alan Ford",
+	Title="{Multipath TCP (MPTCP) Application Interface Considerations}",
+	Type="{Internet-Draft}",
+	Number="draft-ietf-mptcp-api-07",
+	Institution="{IETF Secretariat}",
+	day=19,
+	month=jan,
+	year=2013,
+	url="http://tools.ietf.org/html/draft-ietf-mptcp-api-07",
+	lastchecked={10-Jan-2015}
+}
+
+@TechReport{draft-ietf-mptcp-architecture,
+	Author="Jana and Costin Raiciu and Sebastien Barre and Mark Handley and Alan Ford",
+	Title="{Architectural Guidelines for Multipath TCP Development}",
+	Type="{Internet-Draft}",
+	Number="draft-ietf-mptcp-architecture-05",
+	Institution="{IETF Secretariat}",
+	day=21,
+	month=jan,
+	year=2011,
+	url="http://tools.ietf.org/html/draft-ietf-mptcp-architecture-05",
+	lastchecked={10-Jan-2015}
+}
+
+@TechReport{draft-ietf-mptcp-attacks,
+	Author="Marcelo Bagnulo and Christoph Paasch and Fernando Gont and Olivier Bonaventure and Costin Raiciu",
+	Title="{Analysis of MPTCP residual threats and possible fixes}",
+	Type="{Internet-Draft}",
+	Number="draft-ietf-mptcp-attacks-02",
+	Institution="{IETF Secretariat}",
+	day=3,
+	month=jul,
+	year=2014,
+	url="http://tools.ietf.org/html/draft-ietf-mptcp-attacks-02",
+	note={ IESG Evaluation::Revised I-D Needed },
+	lastchecked={10-Jan-2015}
+}
+
+@TechReport{draft-ietf-mptcp-congestion,
+	Author="Costin Raiciu and Mark Handley and Damon Wischik",
+	Title="{Coupled Congestion Control for Multipath Transport Protocols}",
+	Type="{Internet-Draft}",
+	Number="draft-ietf-mptcp-congestion-07",
+	Institution="{IETF Secretariat}",
+	day=29,
+	month=jul,
+	year=2011,
+	url="http://tools.ietf.org/html/draft-ietf-mptcp-congestion-07",
+	lastchecked={10-Jan-2015}
+}
+
+@TechReport{draft-ietf-mptcp-experience,
+	Author="Olivier Bonaventure and Christoph Paasch and Gregory Detal",
+	Title="{Experience with Multipath TCP}",
+	Type="{Internet-Draft}",
+	Number="draft-ietf-mptcp-experience-01",
+	Institution="{IETF Secretariat}",
+	day=17,
+	month=mar,
+	year=2015,
+	url="http://tools.ietf.org/html/draft-ietf-mptcp-experience-01",
+	note={ I-D Exists },
+	lastchecked={10-Jan-2015}
+}
+
+@TechReport{draft-ietf-mptcp-multiaddressed,
+	Author="Alan Ford and Costin Raiciu and Mark Handley and Olivier Bonaventure",
+	Title="{TCP Extensions for Multipath Operation with Multiple Addresses}",
+	Type="{Internet-Draft}",
+	Number="draft-ietf-mptcp-multiaddressed-12",
+	Institution="{IETF Secretariat}",
+	day=22,
+	month=oct,
+	year=2012,
+	url="http://tools.ietf.org/html/draft-ietf-mptcp-multiaddressed-12",
+	lastchecked={10-Jan-2015}
+}
+
+@TechReport{draft-ietf-mptcp-rfc6824bis,
+	Author="Alan Ford and Costin Raiciu and Mark Handley and Olivier Bonaventure",
+	Title="{TCP Extensions for Multipath Operation with Multiple Addresses}",
+	Type="{Internet-Draft}",
+	Number="draft-ietf-mptcp-rfc6824bis-03",
+	Institution="{IETF Secretariat}",
+	day=27,
+	month=oct,
+	year=2014,
+	url="http://tools.ietf.org/html/draft-ietf-mptcp-rfc6824bis-03",
+	note={ I-D Exists },
+	lastchecked={10-Jan-2015}
+}
+
+@TechReport{draft-ietf-mptcp-threat,
+	Author="Marcelo Bagnulo",
+	Title="{Threat Analysis for TCP Extensions for Multipath Operation with Multiple Addresses}",
+	Type="{Internet-Draft}",
+	Number="draft-ietf-mptcp-threat-08",
+	Institution="{IETF Secretariat}",
+	day=26,
+	month=jan,
+	year=2011,
+	url="http://tools.ietf.org/html/draft-ietf-mptcp-threat-08",
+	lastchecked={10-Jan-2015}
+}
+
+@TechReport{draft-khalili-mptcp-congestion-control,
+	Author="Ramin Khalili and Nicolas Gast and Miroslav Popovic and Jean-Yves Le Boudec",
+	Title="{Opportunistic Linked-Increases Congestion Control Algorithm for MPTCP}",
+	Type="{Internet-Draft}",
+	Number="draft-khalili-mptcp-congestion-control-05",
+	Institution="{IETF Secretariat}",
+	day=4,
+	month=jul,
+	year=2014,
+	url="http://tools.ietf.org/html/draft-khalili-mptcp-congestion-control-05",
+	lastchecked={10-Jan-2015}
+}
+
+@TechReport{draft-khalili-mptcp-performance-issues,
+	Author="Ramin Khalili and Nicolas Gast and Miroslav Popovic and Jean-Yves Le Boudec",
+	Title="{Performance Issues with MPTCP}",
+	Type="{Internet-Draft}",
+	Number="draft-khalili-mptcp-performance-issues-06",
+	Institution="{IETF Secretariat}",
+	day=4,
+	month=jul,
+	year=2014,
+	url="http://tools.ietf.org/html/draft-khalili-mptcp-performance-issues-06",
+	lastchecked={10-Jan-2015}
+}
+
+@TechReport{draft-lopez-mptcp-middlebox,
+	Author="Ed",
+	Title="{Multipath TCP Middlebox Behavior}",
+	Type="{Internet-Draft}",
+	Number="draft-lopez-mptcp-middlebox-00",
+	Institution="{IETF Secretariat}",
+	day=13,
+	month=nov,
+	year=2014,
+	url="http://tools.ietf.org/html/draft-lopez-mptcp-middlebox-00",
+	note={ I-D Exists },
+	lastchecked={10-Jan-2015}
+}
+
+@TechReport{draft-mptcp-congestion,
+	Author="Costin Raiciu and Mark Handley and Damon Wischik",
+	Title="{Coupled Multipath-Aware Congestion Control}",
+	Type="{Internet-Draft}",
+	Number="draft-mptcp-congestion-00",
+	Institution="{IETF Secretariat}",
+	day=5,
+	month=jul,
+	year=2010,
+	url="http://tools.ietf.org/html/draft-mptcp-congestion-00",
+	note={ Replaced by draft-ietf-mptcp-congestion },
+	lastchecked={10-Jan-2015}
+}
+
+@TechReport{draft-paasch-mptcp-control-stream,
+	Author="Christoph Paasch and Olivier Bonaventure",
+	Title="{A generic control stream for Multipath TCP}",
+	Type="{Internet-Draft}",
+	Number="draft-paasch-mptcp-control-stream-00",
+	Institution="{IETF Secretariat}",
+	day=11,
+	month=feb,
+	year=2014,
+	url="http://tools.ietf.org/html/draft-paasch-mptcp-control-stream-00",
+	lastchecked={10-Jan-2015}
+}
+
+@TechReport{draft-paasch-mptcp-lowoverhead,
+	Author="Christoph Paasch and Olivier Bonaventure",
+	Title="{MultiPath TCP Low Overhead}",
+	Type="{Internet-Draft}",
+	Number="draft-paasch-mptcp-lowoverhead-00",
+	Institution="{IETF Secretariat}",
+	day=15,
+	month=oct,
+	year=2012,
+	url="http://tools.ietf.org/html/draft-paasch-mptcp-lowoverhead-00",
+	lastchecked={10-Jan-2015}
+}
+
+@TechReport{draft-paasch-mptcp-ssl,
+	Author="Christoph Paasch and Olivier Bonaventure",
+	Title="{Securing the MultiPath TCP handshake with external keys}",
+	Type="{Internet-Draft}",
+	Number="draft-paasch-mptcp-ssl-00",
+	Institution="{IETF Secretariat}",
+	day=15,
+	month=oct,
+	year=2012,
+	url="http://tools.ietf.org/html/draft-paasch-mptcp-ssl-00",
+	lastchecked={10-Jan-2015}
+}
+
+@TechReport{draft-raiciu-mptcp-congestion,
+	Author="Costin Raiciu and Mark Handley and Damon Wischik",
+	Title="{Coupled Multipath-Aware Congestion Control}",
+	Type="{Internet-Draft}",
+	Number="draft-raiciu-mptcp-congestion-01",
+	Institution="{IETF Secretariat}",
+	day=8,
+	month=mar,
+	year=2010,
+	url="http://tools.ietf.org/html/draft-raiciu-mptcp-congestion-01",
+	note={ Replaced by draft-ietf-mptcp-congestion },
+	lastchecked={10-Jan-2015}
+}
+
+@TechReport{draft-sarolahti-mptcp-af-multipath,
+	Author="Pasi Sarolahti",
+	Title="{Multi-address Interface in the Socket API}",
+	Type="{Internet-Draft}",
+	Number="draft-sarolahti-mptcp-af-multipath-01",
+	Institution="{IETF Secretariat}",
+	day=4,
+	month=mar,
+	year=2010,
+	url="http://tools.ietf.org/html/draft-sarolahti-mptcp-af-multipath-01",
+	lastchecked={10-Jan-2015}
+}
+
+@TechReport{draft-scharf-mptcp-api,
+	Author="Michael Scharf and Alan Ford",
+	Title="{MPTCP Application Interface Considerations}",
+	Type="{Internet-Draft}",
+	Number="draft-scharf-mptcp-api-04",
+	Institution="{IETF Secretariat}",
+	day=22,
+	month=nov,
+	year=2010,
+	url="http://tools.ietf.org/html/draft-scharf-mptcp-api-04",
+	note={ Replaced by draft-ietf-mptcp-api },
+	lastchecked={10-Jan-2015}
+}
+
+@TechReport{draft-scharf-mptcp-mctcp,
+	Author="Michael Scharf",
+	Title="{Multi-Connection TCP (MCTCP) Transport}",
+	Type="{Internet-Draft}",
+	Number="draft-scharf-mptcp-mctcp-01",
+	Institution="{IETF Secretariat}",
+	day=12,
+	month=jul,
+	year=2010,
+	url="http://tools.ietf.org/html/draft-scharf-mptcp-mctcp-01",
+	lastchecked={10-Jan-2015}
+}
+
+@TechReport{draft-singh-mptcp-plmt,
+	Author="Amanpreet Singh and Michael Scharf",
+	Title="{PayLoad Multi-connection Transport using Multiple Addresses}",
+	Type="{Internet-Draft}",
+	Number="draft-singh-mptcp-plmt-00",
+	Institution="{IETF Secretariat}",
+	day=6,
+	month=aug,
+	year=2010,
+	url="http://tools.ietf.org/html/draft-singh-mptcp-plmt-00",
+	lastchecked={10-Jan-2015}
+}
+
+
+@TechReport{draft-walid-mptcp-congestion-control,
+	Author="Anwar Walid and Qiuyu Peng and Jaehyun Hwang and Steven Low",
+	Title="{Balanced Linked Adaptation Congestion Control Algorithm for MPTCP}",
+	Type="{Internet-Draft}",
+	Number="draft-walid-mptcp-congestion-control-01",
+	Institution="{IETF Secretariat}",
+	day=27,
+	month=jul,
+	year=2014,
+	url="http://tools.ietf.org/html/draft-walid-mptcp-congestion-control-01",
+	note={ I-D Exists },
+	lastchecked={10-Jan-2015}
+}
+
+@TechReport{draft-wei-mptcp-proxy-mechanism,
+	Author="Xinpeng Wei and Chunshan Xiong",
+	Title="{MPTCP proxy mechanisms}",
+	Type="{Internet-Draft}",
+	Number="draft-wei-mptcp-proxy-mechanism-00",
+	Institution="{IETF Secretariat}",
+	day=29,
+	month=jun,
+	year=2014,
+	url="http://tools.ietf.org/html/draft-wei-mptcp-proxy-mechanism-00",
+	lastchecked={10-Jan-2015}
+}
+
+@TechReport{draft-wing-mptcp-pcp,
+	Author="Dan Wing and Ram R and Tirumaleswar Reddy and Alan Ford and Reinaldo Penno",
+	Title="{Multipath TCP (MPTCP) Path Selection using PCP}",
+	Type="{Internet-Draft}",
+	Number="draft-wing-mptcp-pcp-00",
+	Institution="{IETF Secretariat}",
+	day=6,
+	month=oct,
+	year=2013,
+	url="http://tools.ietf.org/html/draft-wing-mptcp-pcp-00",
+	lastchecked={10-Jan-2015}
+}
+
+@TechReport{draft-wr-mptcp-single-homed,
+	Author="Rolf Winter and Michael Faath and Andreas Ripke",
+	Title="{Multipath TCP Support for Single-homed End-systems}",
+	Type="{Internet-Draft}",
+	Number="draft-wr-mptcp-single-homed-05",
+	Institution="{IETF Secretariat}",
+	day=15,
+	month=jul,
+	year=2013,
+	url="http://tools.ietf.org/html/draft-wr-mptcp-single-homed-05",
+	lastchecked={10-Jan-2015}
+}
+
+@TechReport{draft-xu-mptcp-congestion-control,
+	Author="Mingwei Xu and Yu Cao and Enhuan Dong",
+	Title="{Delay-based Congestion Control for MPTCP}",
+	Type="{Internet-Draft}",
+	Number="draft-xu-mptcp-congestion-control-01",
+	Institution="{IETF Secretariat}",
+	day=5,
+	month=jan,
+	year=2015,
+	url="http://tools.ietf.org/html/draft-xu-mptcp-congestion-control-01",
+	note={ I-D Exists },
+	lastchecked={10-Jan-2015}
+}
+
+@TechReport{draft-xue-mptcp-tmpp-unware-hosts,
+	Author="Kaiping Xue and Jing Guo and Peilin Hong and Lei Zhu",
+	Title="{TMPP for Both Two MPTCP-unaware Hosts}",
+	Type="{Internet-Draft}",
+	Number="draft-xue-mptcp-tmpp-unware-hosts-02",
+	Institution="{IETF Secretariat}",
+	day=20,
+	month=jun,
+	year=2013,
+	url="http://tools.ietf.org/html/draft-xue-mptcp-tmpp-unware-hosts-02",
+	lastchecked={10-Jan-2015}
+}
+
+@TechReport{ draft-dreibholz-mptcp-nornet-experience,
+	author = "Thomas Dreibholz and Xing Zhou",
+	title = "{MPTCP Experiences in the NorNet Testbed}",
+	type = "Internet Draft",
+	number = "draft-dreibholz-mptcp-nornet-experience-00",
+	day = "31",
+	month = mar,
+	year = "2015",
+	institution = "IETF, Individual Submission",
+	language = "english",
+	abstract = "{This document collects some experiences of Multi-Path TCP~(MPTCP) evaluations in the NorNet testbed.}",
+	url = "https://tools.ietf.org/id/draft-dreibholz-mptcp-nornet-experience-00.txt",
+	url.size = "17015",
+	url.md5 = "3fb462ed7fc653dc89c766877c15c345",
+	url.mime = "text/plain",
+	url.checked = "2015-03-31 21:32:50 KST"
+}

@@ -1,0 +1,73 @@
+\documentclass{article}
+
+\usepackage{fullpage} % use entire page layout
+\usepackage{times}     % smaller and better fonts that the standard latex ones
+\usepackage[letterpaper]{geometry} % force letter format
+\usepackage[colorlinks=true,linkcolor=black,urlcolor=blue,anchorcolor=black,citecolor=black,backref=none]{hyperref}
+\usepackage[usenames,dvipsnames]{color}
+%% Disable backref and make \href colors more decent:
+\definecolor{MyDarkBlue}{rgb}{0,0.1,0.7}
+\hypersetup{pdfborder={0 0 0},colorlinks,breaklinks=true,
+  urlcolor={MyDarkBlue},citecolor={MyDarkBlue},linkcolor={MyDarkBlue} }
+\newcommand{\biburl}{\url{http://github.com/obonaventure/mptcp-bib}}
+
+
+\title{Multipath TCP : An annotated bibliography} 
+
+\author{\href{http://perso.uclouvain.be/olivier.bonaventure}{Olivier Bonaventure}\\
+\small{ICTEAM, UCL, Louvain-la-Neuve, Belgium}
+}
+
+
+
+\begin{document}
+
+\maketitle 
+
+
+
+\section{Introduction}
+%=====================
+
+Multipath TCP\cite{rfc6824} is a recent TCP extension being developed within the MPTCP workgroup of the Internet Engineering Task Force. Multipath TCP enables a TCP connection to exchange data over different interfaces. This extension has recently received a growing interest from both researchers who publish a growing number of articles on the topic and the vendors since Apple has decided to use Multipath TCP on its smartphones and tablets to support the Siri voice recognition application. 
+
+This document assumes that the reader is familiar with Multipath TCP. Tutorials on this TCP extension may be found in \cite{Paasch_MPTCP:2014,Raiciu_ebook:2013,Bonaventure_Overview:2012}.
+
+This document gathers an as complete as possible bibliography of the IETF documents and scientific publications related to Multipath TCP. It is maintained at \biburl. Comments, suggestions and contributions are more than welcome. 
+
+The document is organised as follows. We first discuss in section~\ref{section:protocol} the publications that propose protocol extensions. Section~\ref{section:congestion} compares the different congestion control proposals. Section~\ref{section:usecases} analyses the different use cases for Multipath TCP and summarises the existing work. Section~\ref{section:software} lists that various software tools that can be used by Multipath TCP users and researchers.
+
+
+\section{Multipath TCP protocol}\label{section:protocol}
+%================================
+
+\input{protocol}
+
+
+\section{Multipath TCP congestion control}\label{section:congestion}
+%==========================================
+
+\input{congestion}
+
+\section{Multipath TCP use cases}\label{section:usecases}
+%========================================
+
+\input{usecases}
+
+\section{Multipath TCP Software}\label{section:software}
+%================================
+
+\input{software}
+
+\section*{Acknowledgements}
+%=============================
+
+This work was partially supported by the European Commission within the FP7 Trilogy2 project.
+
+\bibliographystyle{acm-doi}
+\bibliography{bibs/ietf,bibs/2008,bibs/2009,bibs/2010,bibs/2011,bibs/2012,bibs/2013,bibs/2014,bibs/2015}
+
+
+
+
+\end{document}

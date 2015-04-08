@@ -12,3 +12,5 @@ The bibliography files are contains in the bibs directory. There is one file for
  - try to use bibtex entry that is as complete as possible. Prefer the bibtex entries that are provided directly by the scientific publishers (IEEE, ACM, ...) to handwritten entries if possible
  - each bibtex entry should contains either a URL that links to the pdf version of the paper (use the url field in the bibtex entry but do not include it in \url{..}) or the official DOI allocated by the publisher
  
+If you know a non-paywalled URL for the pdf of the articles listed in the bibliography, please update the corresponding bibtex entries and issue a pull request. When a DOI is listed inside a reference, please keep the DOI intact and do not change it.
+

@@ -18,3 +18,12 @@ The standard congestion congestion scheme chosen by the MPTCP working group for 
 
 One of the initial design choices of Multipath TCP was to be as compatible as possible with the existing applications that interact with TCP through the socket interface. Still, \cite{rfc6897} describes some basic extensions to the socket API to enable applications to notably disable Multipath TCP.  
 
+
+\subsection{Protocol extensions}
+
+
+
+\subsection{Interactions with other protocols}
+
+In several use cases, such as datacenters, the selection of the best paths for the subflows that compose a Multipath TCP connection is an important decision. The current IETF RFCs do not manadate any path selection mechanisms. Proposed techniques include random selection with ECMP \cite{Raiciu_Datacenter:2011}, modifying the hash function used by ECMP \cite{Detal_Revisiting:2013} is used, or using other fields like the TTL to influence the path as proposed in \cite{Kabbani_Flowbender:2014}. Another approach is to develop a signalling protocol that enables the hosts to query the network for the paths to be used to reach a specific destination. Krupakaran et al. propose in \cite{Krupakaran_Optimized:2015} a layer-2 protocol called Traceflow to exchange this kind of information.
+

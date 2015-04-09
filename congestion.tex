@@ -11,7 +11,8 @@ Cao et al. propose in
 \cite{Cao_Delay:2012} % delay based congestion control, implemented in Linux
 a delay-based congestion control scheme for Multipath TCP. This congestion control scheme relies on delay measurements to estimate congestion and adapt the congestion windows of the different subflows. It has been included in the Linux Multipath TCP implementation.
 
-Khalili et al. describe in \cite{Khalili_MPTCP:2012,Khalili_MPTCP:2013} several conditions where the LIA congestion control scheme does not operate perfectly and propose the OLIA congestion control scheme. This congestion control scheme is supported by the Linux Multipath TCP implementation.  % OLIA revised in \cite{}
+Khalili et al. describe in \cite{Khalili_MPTCP:2012,Khalili_MPTCP:2013} several conditions where the LIA congestion control scheme does not operate perfectly and propose the OLIA congestion control scheme \cite{draft-khalili-mptcp-congestion-control}. This congestion control scheme is supported by the Linux Multipath TCP implementation.  % OLIA revised in \cite{}
 
-Peng et al. describe in \cite{Peng_BALIA:2015} another improvement to the LIA congestion control scheme. This congestion control scheme is also supported by the Linux Multipath TCP implementation.
+Peng et al. describe in \cite{Peng_BALIA:2015} another improvement to the LIA congestion control scheme called BALIA \cite{draft-walid-mptcp-congestion-control}. This congestion control scheme is also supported by the Linux Multipath TCP implementation.
 
+Delay-based congestion control has been proposed in regular TCP a few decades ago. Cao et al. propose in \cite{Cao_Delay:2012} a delay-based congestion control scheme that is adapted to Multipath TCP. This congestion control has been included in the Multipath TCP implementation in the Linux kernel since version 0.89 \cite{draft-xu-mptcp-congestion-control}.

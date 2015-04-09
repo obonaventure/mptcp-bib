@@ -8,11 +8,16 @@ The first phase of the work in the IETF MPTCP working group has been focussed on
 
 In addition, \cite{rfc6182} lists several compatibility goals that include compatibility with existing applications that use the socket API and compatibility with the network including the middleboxes that it could contain.
 
-The security requirements were discussed in more details in a separate document \cite{rfc6181}. These requirements are being updated in \cite{draft-ietf-mptcp-attacks}.
-
+The security requirements were discussed in more details in a separate document \cite{rfc6181}. This document defines the flooding attacks and the hijacking attacks that were considered for the initial design of Multipath TCP. 
 
 
 The detailed specification for the Multipath TCP protocol extension may be found in \cite{rfc6824}. This specification is being updated to include in the revised specification the lessons learned from the utilisation of Multipath TCP in the global Internet \cite{draft-ietf-mptcp-experience}. Several of the design choices for the protocol and its implementation in the Linux kernel are discussed in \cite{Raiciu_Hard:2012}. The revised specification \cite{draft-ietf-mptcp-rfc6824bis} includes several improvements such as a modified \texttt{ADD\_ADDR} option that includes a HMAC and an option for the RST segments \cite{draft-bonaventure-mptcp-rst}.
+
+A companion document discusses the security risks and possible attacks with Multipath TCP and how the identified attacks
+could be mitigated~\cite{draft-ietf-mptcp-attacks}. The recent 
+modification of the \texttt{ADD\_ADDR} option is a result of this work.
+
+
 
 The standard congestion congestion scheme chosen by the MPTCP working group for Multipath TCP is described in \cite{rfc6356}. This congestion control scheme was first proposed and evaluated in \cite{Wischik_Design:2011}.
 
@@ -21,6 +26,32 @@ One of the initial design choices of Multipath TCP was to be as compatible as po
 
 \subsection{Protocol extensions}
 
+Several extensions to Multipath TCP have been proposed within the IETF MPTCP working group. 
+
+TCP Fast Open is one of the last TCP extensions that has been added to TCP. Barre et al. discuss
+in \cite{draft-barre-mptcp-tfo} how to support TFO within Multipath TCP and report their experience in implementing TFO in the Multipath TCP implementation in the Linux kernel.
+
+Single-path TCP uses the timestamp option defined in RFC1323 to estimate round-trip-times and more importantly to protect TCP against problems that could occur when a connection sends data
+quickly and sequence numbers wrap. For this usage, RFC7323, requires all TCP segments to carry a timestamp option. With
+Multipath TCP, the second utilisation of the timestamp option is
+void since Multipath TCP uses 64 bits sequence numbers that protect against problems when the 32 bits sequence numbers wrap. Requiring a timestamp option in all segments is a waste of space
+in the limited TCP header. \cite{draft-bonaventure-mptcp-timestamp} proposes a different
+type of timestamp option for Multipath TCP.
+
+The extensibility of TCP is limited by the difficulty of adding new options in the TCP header that cannot be longer than 64 bytes. \cite{draft-paasch-mptcp-control-stream} proposes a different approach that uses one flag in the DSS option to 
+indicate whether such an option maps regular data or control information. 
+
+Several researchers have analysed the security of Multipath TCP
+and proposed different solutions to improve its security. 
+Diez et al. propose in \cite{Diez_Security:2011} to use hash chains to secure the establishment of subflows. Instead of exchanging keys to secure only the establishment of subflows, \cite{draft-paasch-mptcp-ssl} assumes that an application layer protocol like SSL, TLS or ssh will negotiate keys to authenticate and encrypt the data. In this case, a better
+approach is to derive the keys used by Multipath TCP to authenticate the new subflows for the keys exchanged by the
+application level protocol \cite{draft-paasch-mptcp-ssl}. 
+\cite{draft-bonaventure-mptcp-tls} goes one step further by
+proposing MPTLS, a close integration of TLS and Multipath TCP. 
+
+In some environments, attacks are not a concern. In these environments, generating random keys for each Multipath TCP
+connection can limit performance. \cite{draft-paasch-mptcp-lowoverhead} proposes a small modification to Multipath TCP that does not use random keys
+to authenticate the establishment of subflows.
 
 
 \subsection{Interactions with other protocols}

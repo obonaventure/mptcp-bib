@@ -32,7 +32,7 @@ Zhou et al. explore in \cite{Zhou_cooperation:2015} the possibility of allowing 
 
 Nong et al. explore in \cite{Nong_Aggregating:2014} how Multipath TCP performs in an 802.11s mesh network and propose to use this technique to aggregate multiple wireless gateways.
 
-\subsection{Middlebox}
+\subsection{Middleboxes}
 
 Various types of middleboxes, ranging from simple Network Address Translation or firewalls to Deep Packet Inspection, Normalizers or transparent proxies have been deployed by entreprise and network operators. Honda et al. performed in \cite{Honda_Extend:2011} a detailed study of the interference caused by such middleboxes. This study had a profound impact on the final design of Multipath TCP and the various mechanisms that it includes to detect and mitigate interference from such middleboxes.
 
@@ -41,6 +41,33 @@ Detal et al. propose \href{http://tracebox.org}{tracebox} in \cite{Detal_tracebo
 Hesmans at al. analyse in \cite{Hesmans_Extensions:2013} the various interactions between Multipath TCP and different types of middleboxes. Their measurements with the Multipath TCP implementation in the Linux kernel show that it can correctly cope with a wide range of middleboxes. Since then, other successful interactions with stranger middleboxes have been reported \cite{draft-ietf-mptcp-experience}.
 
 Nicutar et al. take a different approach in \cite{Nicutar_Acrobatics:2013} since they propose to leverage Multipath TCP to design new middleboxes that could cooperate with the endhosts.
+
+\subsection{Multipath TCP Proxies}
+
+Multipath TCP is an end-to-end protocol that needs to be deployed on both clients and servers to achieve all its benefits.
+Measurements with past TCP extensions showed that new TCP extensions are deployed rather slowly and that servers are
+upgraded after clients. Several researchers have proposed
+and in some cases implemented different types of proxies to convert Multipath TCP into regular TCP or the opposite.
+
+Hampel and Klein propose in \cite{draft-hampel-mptcp-proxies-anchors} two types of Multipath TCP middleboxes. A proxy can be used to convert a Multipath TCP 
+connection into a regular TCP connection. An anchor is a middlebox that aids mobility.  
+A prototype user space implementation on top of netfilter has been released\footnote{See \url{https://open-innovation.alcatel-lucent.com/docman/?group_id=73&selected_doc_group_id=313}.}. Additional details and some performance measurements are provide in \cite{Hampel_Seamless:2013}.
+
+Ayar et al. propose in \cite{draft-ayar-transparent-sca-proxy-00} a Splitter/Combiner architecture that enables TCP connections to use different paths
+through the network. The proposed architecture is discussed in more details, implemented with netfilter and tested by simulations in \cite{Ayar_SCA:2012,Ayar_TCP:2012}
+
+Detal et al. propose in \cite{Detal_Mimbox:2013} Mimbox (Multipath in the middle(box)), an efficient in-kernel proxy that converts Multipath TCP connections into TCP connections and the opposite. Performance evaluation on 10 Gbps links shows that
+the proposed solution operates are speeds that are close to line rate and similar to the performance of simple packet forwarding.
+
+Multipath TCP is not the only transport protocol that allows to use multiple paths simultaneously. SCTP-CMT is a variant of the SCTP protocol that is able to use several paths at the same time. Tachibana et al. propose in \cite{Tachibana_proxy:2014} a 
+proxy that runs on Android smartphones and converts TCP connections into SCTP-CMT connections to reach a server that
+converts them back to regular TCP to reach the final destination.
+In practice, \cite{Tachibana_proxy:2014} uses a userspace implementation of SCTP on the smartphone and tunnels the SCTP packets inside UDP to pass through middleboxes that do not 
+understand SCTP. Each TCP connection is mapped onto one SCTP stream, which minimises the number of SCTP connections that need to be established between the smartphone and the proxy.
+
+Deng et al. discuss in \cite{draft-deng-mptcp-proxy} the requirements for on-path and off-path Multipath TCP proxies that could be deployed mobile and fixed in ISP networks. 
+
+Wei et al. \cite{draft-wei-mptcp-proxy-mechanism} discuss on-path and off-path Multipath TCP proxies and propose a new flag in the \texttt{MP\_CAPABLE} option to indicate the utilisation of a proxy.
 
 \subsection{Simulation studies}
 

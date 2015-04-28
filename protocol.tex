@@ -31,6 +31,8 @@ Several extensions to Multipath TCP have been proposed within the IETF MPTCP wor
 TCP Fast Open is one of the last TCP extensions that has been added to TCP. Barre et al. discuss
 in \cite{draft-barre-mptcp-tfo} how to support TFO within Multipath TCP and report their experience in implementing TFO in the Multipath TCP implementation in the Linux kernel.
 
+To cope with some forms of denial of service attacks, various TCP servers rely on syncookies. This approach enables them to respond to \texttt{SYN} segments without maintaining any state on the server. State is only created upon reception of a valid third \texttt{ACK} segment. With Multipath TCP, it is more difficult to enable servers to operate without maintaining state given the keys exchanged in the \texttt{MP\_CAPABLE} option. \cite{draft-paasch-mptcp-syncookies-00} analyses this problem and proposes a new \texttt{MP\_CAPABLE\_EXT} option to cope with this problem.
+
 Single-path TCP uses the timestamp option defined in RFC1323 to estimate round-trip-times and more importantly to protect TCP against problems that could occur when a connection sends data
 quickly and sequence numbers wrap. For this usage, RFC7323, requires all TCP segments to carry a timestamp option. With
 Multipath TCP, the second utilisation of the timestamp option is

@@ -16,3 +16,7 @@ If you know a non-paywalled URL for the pdf of the articles listed in the biblio
 
 The pdf version of the annotated bibliography is always available from http://blog.multipath-tcp.org/blog/html/_downloads/mptcp-bib.pdf
 
+You can cite this bibliography as :
+
+O. Bonaventure, Multipath TCP : An annotated bibliography, April 2015, http://dx.doi.org/10.5281/zenodo.17336
+

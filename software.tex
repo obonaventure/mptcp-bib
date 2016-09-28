@@ -2,14 +2,14 @@ This section documents the different Multipath TCP implementations \cite{draft-e
 
 \subsection{Multipath TCP implementations}
 
-The first implementation of Multipath TCP written by Costin Raiciu inside a userspace port of the Linux TCP stack\footnote{Available from \url{http://nrg.cs.ucl.ac.uk/mptcp/implementation.html}.}. This implementation has been used to perform some initial validations of the protocol and the LIA congestion control scheme \cite{Wischik_Design:2011}, but it was not useable by real applications.
+The first implementation of Multipath TCP was written by Costin Raiciu inside a userspace port of the Linux TCP stack\footnote{Available from \url{http://nrg.cs.ucl.ac.uk/mptcp/implementation.html}.}. This implementation has been used to perform some initial validations of the protocol and the LIA congestion control scheme \cite{Wischik_Design:2011}, but it was not useable by real applications.
 
 The first in-kernel implementation of Multipath TCP was written by Sebastien Barre in the Linux kernel with the help of several other researchers. It is described in more details in \cite{Barre_thesis:2011}. Some information about this early implementation may be found in \cite{draft-barre-mptcp-impl} but this document has not been updated. This initial implementation supported the LIA congestion control scheme but did not support TSO/GRO nor the mechanisms that are required to deal with middlebox 
 interference.
 
 Christoph Paasch with the help of Gregory Detal continued the development of the Multipath TCP patch in the Linux kernel. They ported the implementation over the 3.x kernel releases and added support for TSO/GRO and middelbox traversal techniques. This implementation is described in \cite{Paasch_Thesis:2014}. Several parts of this implementation have been described in more details.
 
-In \cite{Paasch_schedulers:2014}, Paasch et al. propose and implement more flexible packet schedulers for Multipath TCP. In the reference implementation of Multipath TCP in the Linux kernel, the default scheduler selects the subflow having the lowest round-trip-time. In addition to this scheduler, \cite{Paasch_schedulers:2014} proposes a round-robin scheduler that takes to congestion windows of the available subflows into account.  
+In \cite{Paasch_schedulers:2014}, Paasch et al. propose and implement more flexible packet schedulers for Multipath TCP. In the reference implementation of Multipath TCP in the Linux kernel, the default scheduler selects the subflow having the lowest round-trip-time. In addition to this scheduler, \cite{Paasch_schedulers:2014} proposes a round-robin scheduler that takes the congestion windows of the available subflows into account.
 
 The next step for the Multipath TCP in the Linux kernel is to be accepted in the mainstream Linux kernel tree. Gucea and Purdila describe in \cite{Gucea_Shaping:2015} the current status of this implementation and the changes that will be required to be accepted upstream.
 

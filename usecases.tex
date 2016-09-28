@@ -2,11 +2,11 @@ This section describes several of the use cases where Multipath TCP has already 
 
 \subsection{Datacenters}
 
-Although Multipath TCP was initially designed with smartphones and mobile devices in mind it found a very interesting use case in datacenters. Today's datacenters are include multiple paths between any pair of communicating hosts. This redundancy is included for two main reasons. First, it enables load balancing and datacenters often rely on Equal Cost Multipath. Second, having redundancy is important to deal with switches and link failures that are frequent events \cite{Zhou_WCMP:2014}.
+Although Multipath TCP was initially designed with smartphones and mobile devices in mind it found a very interesting use case in datacenters. Today's datacenters include multiple paths between any pair of communicating hosts. This redundancy is included for two main reasons. First, it enables load balancing and datacenters often rely on Equal Cost Multipath. Second, having redundancy is important to deal with switches and link failures that are frequent events \cite{Zhou_WCMP:2014}.
 
 Raiciu et al. demonstrate in \cite{Raiciu_Datacenter:2011} that Multipath TCP can enable higher utilisation in datacenters. This work considers several datacenter topologies and uses both simulations and real measurements with the Multipath TCP implementation in the Linux kernel running on Amazon EC2 virtual machines to demonstrate the benefits of Multipath TCP. It is interesting to note that for this use case the communicating hosts have a single address in contrast with the requirements listed in \cite{rfc6182}. The different paths are created by creating several subflows between the client and the server using different source ports on the client host. The hash function used to perform ECMP on the network nodes forwards the different subflows over different paths and the Multipath TCP congestion control scheme adjusts the repartition of the load among these paths in reaction to congestion events. 
 
-Although~\cite{Raiciu_Datacenter:2011} assumed ECMP, this is not strictly required and variations of this scheme are possible. Detal et al. propose in \cite{Detal_Revisiting:2013} to replace hash function in load balancing nodes by block ciphers and demonstrates that this technique enables Multipath TCP-enabled hosts to select paths inside the datacenter. Zhou et al. propose in \cite{Zhou_WCMP:2014} a load balancing scheme that distributes the load according to different weights. Their simulations show that WCMP complements nicely Multipath TCP. 
+Although~\cite{Raiciu_Datacenter:2011} assumed ECMP, this is not strictly required and variations of this scheme are possible. Detal et al. propose in \cite{Detal_Revisiting:2013} to replace the hash function in load balancing nodes by block ciphers and demonstrate that this technique enables Multipath TCP-enabled hosts to select paths inside the datacenter. Zhou et al. propose in \cite{Zhou_WCMP:2014} a load balancing scheme that distributes the load according to different weights. Their simulations show that WCMP complements nicely Multipath TCP.
 
 
 Bredel et al. modify in \cite{Bredel_Flow-based:2014} an Openflow controller and use it with Multipath TCP. Their measurements show performance improvements over disjoint paths.
@@ -46,7 +46,7 @@ Various types of middleboxes, ranging from simple Network Address Translation or
 
 Detal et al. propose \href{http://tracebox.org}{tracebox} in \cite{Detal_tracebox:2013}. This middlebox detection tools leverages ICMP reports to detect middlebox interference. They use it to evaluate where TCP packets using the \texttt{MP\_CAPABLE} options are blocked.
 
-Hesmans at al. analyse in \cite{Hesmans_Extensions:2013} the various interactions between Multipath TCP and different types of middleboxes. Their measurements with the Multipath TCP implementation in the Linux kernel show that it can correctly cope with a wide range of middleboxes. Since then, other successful interactions with stranger middleboxes have been reported \cite{draft-ietf-mptcp-experience}.
+Hesmans et al. analyse in \cite{Hesmans_Extensions:2013} the various interactions between Multipath TCP and different types of middleboxes. Their measurements with the Multipath TCP implementation in the Linux kernel show that it can correctly cope with a wide range of middleboxes. Since then, other successful interactions with stranger middleboxes have been reported \cite{draft-ietf-mptcp-experience}.
 
 Nicutar et al. take a different approach in \cite{Nicutar_Acrobatics:2013} since they propose to leverage Multipath TCP to design new middleboxes that could cooperate with the endhosts.
 
@@ -59,13 +59,13 @@ and in some cases implemented different types of proxies to convert Multipath TC
 
 Hampel and Klein propose in \cite{draft-hampel-mptcp-proxies-anchors} two types of Multipath TCP middleboxes. A proxy can be used to convert a Multipath TCP 
 connection into a regular TCP connection. An anchor is a middlebox that aids mobility.  
-A prototype user space implementation on top of netfilter has been released\footnote{See \url{https://open-innovation.alcatel-lucent.com/docman/?group_id=73&selected_doc_group_id=313}.}. Additional details and some performance measurements are provide in \cite{Hampel_Seamless:2013}.
+A prototype user space implementation on top of netfilter has been released\footnote{See \url{https://open-innovation.alcatel-lucent.com/docman/?group_id=73&selected_doc_group_id=313}.}. Additional details and some performance measurements are provided in \cite{Hampel_Seamless:2013}.
 
 Ayar et al. propose in \cite{draft-ayar-transparent-sca-proxy-00} a Splitter/Combiner architecture that enables TCP connections to use different paths
 through the network. The proposed architecture is discussed in more details, implemented with netfilter and tested by simulations in \cite{Ayar_SCA:2012,Ayar_TCP:2012}
 
 Detal et al. propose in \cite{Detal_Mimbox:2013} Mimbox (Multipath in the middle(box)), an efficient in-kernel proxy that converts Multipath TCP connections into TCP connections and the opposite. Performance evaluation on 10 Gbps links shows that
-the proposed solution operates are speeds that are close to line rate and similar to the performance of simple packet forwarding.
+the proposed solution operates at speeds that are close to line rate and similar to the performance of simple packet forwarding.
 
 Multipath TCP is not the only transport protocol that allows to use multiple paths simultaneously. SCTP-CMT is a variant of the SCTP protocol that is able to use several paths at the same time. Tachibana et al. propose in \cite{Tachibana_proxy:2014} a 
 proxy that runs on Android smartphones and converts TCP connections into SCTP-CMT connections to reach a server that
